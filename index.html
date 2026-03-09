@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coord Account & Data Deletion</title>
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --card: #151518;
+      --text: #f5f5f7;
+      --muted: #b7b7c2;
+      --line: #2a2a31;
+      --accent: #ffffff;
+      --danger: #ff5a5f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1 { margin-bottom: 8px; font-size: 2rem; }
+    h2 { margin-top: 32px; font-size: 1.2rem; }
+    p, li { color: var(--muted); }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+    ul { padding-left: 20px; }
+    form { display: grid; gap: 14px; margin-top: 14px; }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #0f0f12;
+      color: var(--text);
+      font: inherit;
+    }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 14px 18px;
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .note {
+      border-left: 4px solid var(--danger);
+      padding-left: 12px;
+      margin-top: 10px;
+    }
+    a { color: #ffffff; }
+    .small { font-size: 0.92rem; color: var(--muted); }
+    .footer { margin-top: 40px; font-size: 0.92rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Coord Account & Data Deletion</h1>
+    <p>
+      If you still have access to the Coord app, you can request account deletion in-app.
+      If you cannot access the app, use the form below to request deletion of your Coord account and associated data.
+    </p>
+
+    <section class="card">
+      <h2>What happens when your deletion request is completed</h2>
+      <ul>
+        <li>Your account login/authentication record is deleted.</li>
+        <li>Your user profile data is deleted.</li>
+        <li>Your stored push notification tokens are deleted.</li>
+        <li>You are removed from membership references on trips you joined but do not own.</li>
+        <li>If you only own solo trips, those trips and related trip data are deleted.</li>
+      </ul>
+      <p class="note">
+        Important: If you still own a shared trip with other members, deletion may require
+        manual resolution before completion so other users’ shared trip data is not disrupted.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Request deletion</h2>
+      <p class="small">
+        Submit this form using the email address associated with your Coord account.
+      </p>
+
+      <form action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+        <div>
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" required />
+        </div>
+
+        <div>
+          <label for="email">Account email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+
+        <div>
+          <label for="message">Optional message</label>
+          <textarea id="message" name="message" placeholder="Anything helpful about your request"></textarea>
+        </div>
+
+        <input type="hidden" name="app" value="Coord" />
+        <input type="hidden" name="request_type" value="Account deletion request" />
+
+        <button type="submit">Submit deletion request</button>
+      </form>
+
+      <p class="small" style="margin-top:14px;">
+        You can also email us directly at
+        <a href="mailto:support@coord-app.com">support@coord-app.com</a>.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Response timeline</h2>
+      <p>We aim to respond to deletion requests within 7 business days.</p>
+    </section>
+
+    <section class="footer">
+      <p>App: Coord</p>
+      <p>Support: <a href="mailto:support@coord-app.com">support@coord-app.com</a></p>
+      <p><a href="https://coord-app.com/privacy">Privacy Policy</a></p>
+    </section>
+  </div>
+</body>
+</html>
